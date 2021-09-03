@@ -1,0 +1,14 @@
+PROG = add2
+OBJS = add2.o add2_s.o add2_c.o
+
+%.o: %.c
+	gcc -g -c -o $@ $<
+
+%.o: %.s
+	as -g -o $@ $<
+
+$(PROG): $(OBJS)
+	gcc -g -o $(PROG) $(OBJS) 
+
+clean:
+	rm -rf $(PROG) $(OBJS)
