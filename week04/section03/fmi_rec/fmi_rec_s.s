@@ -13,7 +13,7 @@ fmi_rec_s:
     cmp r1, r2
     ble compare
     sub r0, r3, r0
-    lsl r0, r0, #2
+    lsr r0, r0, #2
     b done
 compare:
     ldr r4, [r1]        @ r4 = *start
